@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c13d18679356f344caeaec4479490067
+labels:
+- InputField
+- TouchScreenKeyboard
+timeCreated: 1499365182
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+2.1.6:
+- Several bugfixes
+- Made project available opensource (https://github.com/development-fennecx/AdvancedInputField), because development/support has stopped. See the support thread for more info: https://forum.unity.com/threads/advanced-input-field-2.1028128/
+
+2.1.5:
+- Several bugfixes & added several properties
+
+2.1.4:
+- Several bugfixes and added OnTextTap event to detect rapid taps on the text
+
+2.1.3:
+- Several bugfixes
+
+2.1.2:
+- Several bugfixes
+
+2.1.1:
+- Hotfix release to fix errors when expanding General tab in inspector
+
+2.1.0:
+- RichTextBindings functionality and multiple bugfixes

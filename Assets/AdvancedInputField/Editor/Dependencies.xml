@@ -1,0 +1,14 @@
+<dependencies>
+	<androidPackages>
+		<androidPackage spec="com.google.android.gms:play-services-auth:17.0.0">
+			<androidSdkPackageIds>
+				<androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+			</androidSdkPackageIds>
+		</androidPackage>
+		<androidPackage spec="com.google.android.gms:play-services-auth-api-phone:17.1.0">
+			<androidSdkPackageIds>
+				<androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+			</androidSdkPackageIds>
+		</androidPackage>
+	</androidPackages>
+</dependencies>

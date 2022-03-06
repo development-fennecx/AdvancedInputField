@@ -1,0 +1,7 @@
+2.1.6:
+- Bugfix: Fixed emoji asset not getting saved correctly after generation in some Unity versions
+- Bugfix: Fixed issue that selection cursors didn't clamp correctly horizontally when using 
+CursorClampMode TEXT_BOUNDS on a multiline inputfield
+- Bugfix: Fixed a small issue that ActionBar could be shown even when disabled in settings
+- Bugfix: Implemented switch for new Unity input system
+- Change: Added WebGL to assembly definition file

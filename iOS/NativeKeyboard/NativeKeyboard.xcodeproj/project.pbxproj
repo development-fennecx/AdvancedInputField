@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		50694F9021847D1C008C92E6 /* UniversalLibrary */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 50694F9321847D1C008C92E6 /* Build configuration list for PBXAggregateTarget "UniversalLibrary" */;
+			buildPhases = (
+				50694F9421847D45008C92E6 /* ShellScript */,
+				50694F9521847FCF008C92E6 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = UniversalLibrary;
+			productName = UniversalLibrary;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2C41839223C23C790034806B /* NKBSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C41839123C23C790034806B /* NKBSingleLineView.m */; };
+		2C57982C2261142700667BEA /* NativeKeyboard.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAFCF64D1C73EC3700912759 /* NativeKeyboard.a */; };
+		2C61B47B23218F51009A9496 /* NKBNativeKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C61B47A23218F51009A9496 /* NKBNativeKeyboardConfiguration.m */; };
+		500145F1201DF6AD002C5C6B /* NKBKeyboardHideEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 500145F0201DF6AD002C5C6B /* NKBKeyboardHideEvent.m */; };
+		500145F5201DF854002C5C6B /* NKBKeyboardShowEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 500145F4201DF854002C5C6B /* NKBKeyboardShowEvent.m */; };
+		500145F7201DFB7F002C5C6B /* NKBTextEditUpdateEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 500145F6201DFB7F002C5C6B /* NKBTextEditUpdateEvent.m */; };
+		500E0BAE206057BA007FCB41 /* NKBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 500E0BAD206057BA007FCB41 /* NKBUtil.m */; };
+		50100FFD1E991B4900DD2D97 /* NKBMultilineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50100FFC1E991B4900DD2D97 /* NKBMultilineView.m */; };
+		503627CF2188F4F000C8C7A7 /* NKBCharacterCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 503627CE2188F4F000C8C7A7 /* NKBCharacterCondition.m */; };
+		503627D22188F53A00C8C7A7 /* NKBCharacterRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 503627D12188F53A00C8C7A7 /* NKBCharacterRule.m */; };
+		503627D52188F54A00C8C7A7 /* NKBCharacterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 503627D42188F54A00C8C7A7 /* NKBCharacterValidator.m */; };
+		5039EF1B2028F458007CD85C /* NKBNativeKeyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5048A4DC201A6B78006EC7D2 /* NKBNativeKeyboard.mm */; };
+		5048A4D7201A67D0006EC7D2 /* NKBNativeKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048A4D6201A67D0006EC7D2 /* NKBNativeKeyboard.m */; };
+		5048A4DA201A6A35006EC7D2 /* NKBTextValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048A4D9201A6A35006EC7D2 /* NKBTextValidator.m */; };
+		5048A4DE201A6D54006EC7D2 /* NKBThreadsafeQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048A4DD201A6D54006EC7D2 /* NKBThreadsafeQueue.m */; };
+		50DF38DE201C894B0053B29C /* NKBUnityCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DF38DD201C894B0053B29C /* NKBUnityCallback.m */; };
+		50EE01C5207E847200345C2F /* NKBNSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE01C4207E847200345C2F /* NKBNSString+Extensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C57982B2261134B00667BEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = $SRCROOT/../../Assets/AdvancedInputField/Plugins/iOS;
+			dstSubfolderSpec = 0;
+			files = (
+				2C57982C2261142700667BEA /* NativeKeyboard.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50694F9521847FCF008C92E6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${SRCROOT}/../../Assets/Plugins/iOS";
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C41839023C23C790034806B /* NKBSingleLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBSingleLineView.h; sourceTree = "<group>"; };
+		2C41839123C23C790034806B /* NKBSingleLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBSingleLineView.m; sourceTree = "<group>"; };
+		2C41839323C2470B0034806B /* NKBInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBInputView.h; sourceTree = "<group>"; };
+		2C61B47923218F51009A9496 /* NKBNativeKeyboardConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBNativeKeyboardConfiguration.h; sourceTree = "<group>"; };
+		2C61B47A23218F51009A9496 /* NKBNativeKeyboardConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBNativeKeyboardConfiguration.m; sourceTree = "<group>"; };
+		500145EF201DF602002C5C6B /* NKBIUnityEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBIUnityEvent.h; sourceTree = "<group>"; };
+		500145F0201DF6AD002C5C6B /* NKBKeyboardHideEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBKeyboardHideEvent.m; sourceTree = "<group>"; };
+		500145F2201DF6CE002C5C6B /* NKBKeyboardHideEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBKeyboardHideEvent.h; sourceTree = "<group>"; };
+		500145F3201DF842002C5C6B /* NKBKeyboardShowEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBKeyboardShowEvent.h; sourceTree = "<group>"; };
+		500145F4201DF854002C5C6B /* NKBKeyboardShowEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBKeyboardShowEvent.m; sourceTree = "<group>"; };
+		500145F6201DFB7F002C5C6B /* NKBTextEditUpdateEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBTextEditUpdateEvent.m; sourceTree = "<group>"; };
+		500145F8201DFB93002C5C6B /* NKBTextEditUpdateEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBTextEditUpdateEvent.h; sourceTree = "<group>"; };
+		500E0BAD206057BA007FCB41 /* NKBUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBUtil.m; sourceTree = "<group>"; };
+		50100FFB1E991B4900DD2D97 /* NKBMultilineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKBMultilineView.h; sourceTree = "<group>"; };
+		50100FFC1E991B4900DD2D97 /* NKBMultilineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBMultilineView.m; sourceTree = "<group>"; };
+		503627CD2188F4F000C8C7A7 /* NKBCharacterCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBCharacterCondition.h; sourceTree = "<group>"; };
+		503627CE2188F4F000C8C7A7 /* NKBCharacterCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBCharacterCondition.m; sourceTree = "<group>"; };
+		503627D02188F53A00C8C7A7 /* NKBCharacterRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBCharacterRule.h; sourceTree = "<group>"; };
+		503627D12188F53A00C8C7A7 /* NKBCharacterRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBCharacterRule.m; sourceTree = "<group>"; };
+		503627D32188F54A00C8C7A7 /* NKBCharacterValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBCharacterValidator.h; sourceTree = "<group>"; };
+		503627D42188F54A00C8C7A7 /* NKBCharacterValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKBCharacterValidator.m; sourceTree = "<group>"; };
+		5048A4D6201A67D0006EC7D2 /* NKBNativeKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBNativeKeyboard.m; sourceTree = "<group>"; };
+		5048A4D8201A67E3006EC7D2 /* NKBNativeKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBNativeKeyboard.h; sourceTree = "<group>"; };
+		5048A4D9201A6A35006EC7D2 /* NKBTextValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBTextValidator.m; sourceTree = "<group>"; };
+		5048A4DB201A6A44006EC7D2 /* NKBTextValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBTextValidator.h; sourceTree = "<group>"; };
+		5048A4DC201A6B78006EC7D2 /* NKBNativeKeyboard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NKBNativeKeyboard.mm; sourceTree = "<group>"; };
+		5048A4DD201A6D54006EC7D2 /* NKBThreadsafeQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBThreadsafeQueue.m; sourceTree = "<group>"; };
+		5048A4DF201A6D69006EC7D2 /* NKBThreadsafeQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBThreadsafeQueue.h; sourceTree = "<group>"; };
+		50DF38DD201C894B0053B29C /* NKBUnityCallback.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = NKBUnityCallback.m; sourceTree = "<group>"; };
+		50DF38DF201C89600053B29C /* NKBUnityCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKBUnityCallback.h; sourceTree = "<group>"; };
+		50EE01C3207E847200345C2F /* NKBNSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKBNSString+Extensions.h"; sourceTree = "<group>"; };
+		50EE01C4207E847200345C2F /* NKBNSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKBNSString+Extensions.m"; sourceTree = "<group>"; };
+		55B03B5D1CC44241006BABE9 /* NKBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKBUtil.h; sourceTree = "<group>"; };
+		FAFCF64D1C73EC3700912759 /* NativeKeyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = NativeKeyboard.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAFCF64A1C73EC3700912759 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		503627CC2188F4AA00C8C7A7 /* TextValidator */ = {
+			isa = PBXGroup;
+			children = (
+				503627CD2188F4F000C8C7A7 /* NKBCharacterCondition.h */,
+				503627CE2188F4F000C8C7A7 /* NKBCharacterCondition.m */,
+				503627D02188F53A00C8C7A7 /* NKBCharacterRule.h */,
+				503627D12188F53A00C8C7A7 /* NKBCharacterRule.m */,
+				503627D32188F54A00C8C7A7 /* NKBCharacterValidator.h */,
+				503627D42188F54A00C8C7A7 /* NKBCharacterValidator.m */,
+				5048A4DB201A6A44006EC7D2 /* NKBTextValidator.h */,
+				5048A4D9201A6A35006EC7D2 /* NKBTextValidator.m */,
+			);
+			path = TextValidator;
+			sourceTree = "<group>";
+		};
+		FAFCF6241C73E48A00912759 = {
+			isa = PBXGroup;
+			children = (
+				FAFCF64E1C73EC3700912759 /* NativeKeyboard */,
+				FAFCF62E1C73E48A00912759 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAFCF62E1C73E48A00912759 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF64D1C73EC3700912759 /* NativeKeyboard.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAFCF64E1C73EC3700912759 /* NativeKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				500145EF201DF602002C5C6B /* NKBIUnityEvent.h */,
+				500145F2201DF6CE002C5C6B /* NKBKeyboardHideEvent.h */,
+				500145F0201DF6AD002C5C6B /* NKBKeyboardHideEvent.m */,
+				500145F3201DF842002C5C6B /* NKBKeyboardShowEvent.h */,
+				500145F4201DF854002C5C6B /* NKBKeyboardShowEvent.m */,
+				50100FFB1E991B4900DD2D97 /* NKBMultilineView.h */,
+				50100FFC1E991B4900DD2D97 /* NKBMultilineView.m */,
+				5048A4D8201A67E3006EC7D2 /* NKBNativeKeyboard.h */,
+				5048A4D6201A67D0006EC7D2 /* NKBNativeKeyboard.m */,
+				5048A4DC201A6B78006EC7D2 /* NKBNativeKeyboard.mm */,
+				2C61B47923218F51009A9496 /* NKBNativeKeyboardConfiguration.h */,
+				2C61B47A23218F51009A9496 /* NKBNativeKeyboardConfiguration.m */,
+				50EE01C3207E847200345C2F /* NKBNSString+Extensions.h */,
+				50EE01C4207E847200345C2F /* NKBNSString+Extensions.m */,
+				2C41839023C23C790034806B /* NKBSingleLineView.h */,
+				2C41839123C23C790034806B /* NKBSingleLineView.m */,
+				500145F8201DFB93002C5C6B /* NKBTextEditUpdateEvent.h */,
+				500145F6201DFB7F002C5C6B /* NKBTextEditUpdateEvent.m */,
+				5048A4DF201A6D69006EC7D2 /* NKBThreadsafeQueue.h */,
+				5048A4DD201A6D54006EC7D2 /* NKBThreadsafeQueue.m */,
+				50DF38DF201C89600053B29C /* NKBUnityCallback.h */,
+				50DF38DD201C894B0053B29C /* NKBUnityCallback.m */,
+				55B03B5D1CC44241006BABE9 /* NKBUtil.h */,
+				500E0BAD206057BA007FCB41 /* NKBUtil.m */,
+				503627CC2188F4AA00C8C7A7 /* TextValidator */,
+				2C41839323C2470B0034806B /* NKBInputView.h */,
+			);
+			path = NativeKeyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAFCF64C1C73EC3700912759 /* NativeKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFCF6531C73EC3700912759 /* Build configuration list for PBXNativeTarget "NativeKeyboard" */;
+			buildPhases = (
+				FAFCF6491C73EC3700912759 /* Sources */,
+				FAFCF64A1C73EC3700912759 /* Frameworks */,
+				2C57982B2261134B00667BEA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NativeKeyboard;
+			productName = EPPZPlugins;
+			productReference = FAFCF64D1C73EC3700912759 /* NativeKeyboard.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAFCF6251C73E48A00912759 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jeroen van Pienbroek";
+				TargetAttributes = {
+					50694F9021847D1C008C92E6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
+					FAFCF64C1C73EC3700912759 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = FAFCF6281C73E48A00912759 /* Build configuration list for PBXProject "NativeKeyboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = FAFCF6241C73E48A00912759;
+			productRefGroup = FAFCF62E1C73E48A00912759 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAFCF64C1C73EC3700912759 /* NativeKeyboard */,
+				50694F9021847D1C008C92E6 /* UniversalLibrary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50694F9421847D45008C92E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target NativeKeyboard ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target NativeKeyboard -configuration ${CONFIGURATION} -sdk iphonesimulator -arch x86_64 -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.a\"\n\ncp \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.a\" \"${SRCROOT}/../../Assets/Plugins/iOS\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAFCF6491C73EC3700912759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50100FFD1E991B4900DD2D97 /* NKBMultilineView.m in Sources */,
+				500145F1201DF6AD002C5C6B /* NKBKeyboardHideEvent.m in Sources */,
+				500145F5201DF854002C5C6B /* NKBKeyboardShowEvent.m in Sources */,
+				5048A4D7201A67D0006EC7D2 /* NKBNativeKeyboard.m in Sources */,
+				5039EF1B2028F458007CD85C /* NKBNativeKeyboard.mm in Sources */,
+				500145F7201DFB7F002C5C6B /* NKBTextEditUpdateEvent.m in Sources */,
+				503627D52188F54A00C8C7A7 /* NKBCharacterValidator.m in Sources */,
+				5048A4DA201A6A35006EC7D2 /* NKBTextValidator.m in Sources */,
+				5048A4DE201A6D54006EC7D2 /* NKBThreadsafeQueue.m in Sources */,
+				50DF38DE201C894B0053B29C /* NKBUnityCallback.m in Sources */,
+				500E0BAE206057BA007FCB41 /* NKBUtil.m in Sources */,
+				2C61B47B23218F51009A9496 /* NKBNativeKeyboardConfiguration.m in Sources */,
+				50EE01C5207E847200345C2F /* NKBNSString+Extensions.m in Sources */,
+				503627CF2188F4F000C8C7A7 /* NKBCharacterCondition.m in Sources */,
+				2C41839223C23C790034806B /* NKBSingleLineView.m in Sources */,
+				503627D22188F53A00C8C7A7 /* NKBCharacterRule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		50694F9121847D1C008C92E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50694F9221847D1C008C92E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAFCF6341C73E48B00912759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				"OTHER_CFLAGS[arch=*]" = "-fembed-bitcode-marker";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAFCF6351C73E48B00912759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				"OTHER_CFLAGS[arch=*]" = "-fembed-bitcode";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAFCF6541C73EC3700912759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_BITCODE = YES;
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = "-fembed-bitcode";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = NativeKeyboard;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAFCF6551C73EC3700912759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_BITCODE = YES;
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = "-fembed-bitcode";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = NativeKeyboard;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50694F9321847D1C008C92E6 /* Build configuration list for PBXAggregateTarget "UniversalLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50694F9121847D1C008C92E6 /* Debug */,
+				50694F9221847D1C008C92E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFCF6281C73E48A00912759 /* Build configuration list for PBXProject "NativeKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFCF6341C73E48B00912759 /* Debug */,
+				FAFCF6351C73E48B00912759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFCF6531C73EC3700912759 /* Build configuration list for PBXNativeTarget "NativeKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFCF6541C73EC3700912759 /* Debug */,
+				FAFCF6551C73EC3700912759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAFCF6251C73E48A00912759 /* Project object */;
+}

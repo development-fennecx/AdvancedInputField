@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    compileOnly files('./libs/UnityPlayer.jar')
+    implementation 'androidx.autofill:autofill:1.0.0'
+    implementation "com.google.android.gms:play-services-auth:17.0.0"
+    implementation "com.google.android.gms:play-services-auth-api-phone:17.1.0"
+    // Avoid redundant Unity Player in final application APK
+}
+
+android.libraryVariants.all { variant ->
+
+    // Task names.
+    String variantName = "${variant.name.capitalize()}";
+    String deployTaskGroup = "plugin";
+    String deployTaskName = "deploy${variantName}PluginArchive";
+    String dependencyTaskName = "assemble${variantName}";
+
+    // Source.
+    String sourceAARFolder = "${buildDir.getPath()}/outputs/aar/";
+    String sourceAARName = "${project.name}-${variant.name}.aar";
+
+    // Target.
+    String targetAssetFolder = "Assets/AdvancedInputField/Plugins/Android/";
+    String targetAARFolder = "${rootDir.getParentFile().getParent()}/${targetAssetFolder}";
+    String targetAARName = "NativeKeyboard.aar";
+
+    // Create task.
+    task(deployTaskName, dependsOn: dependencyTaskName, type: Copy) {
+        logger.lifecycle("${variant.name.capitalize()} AAR Folder: ${sourceAARFolder}")
+        logger.lifecycle("${variant.name.capitalize()} Target AAR Folder: ${targetAARFolder}")
+        logger.lifecycle("${variant.name.capitalize()} Target AAR name: ${targetAARName}")
+
+        from(sourceAARFolder)
+        into(targetAARFolder)
+        //include(sourceAARName)
+        //rename(sourceAARName, targetAARName)
+    }.group = deployTaskGroup;
+}
