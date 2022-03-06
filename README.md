@@ -1,4 +1,7 @@
 # AdvancedInputField
+The opensource version of the Advanced Input Field plugin. The plugin is licensed under the MIT License. 
+The plugin won't be further supported by me, but feel free to fork this repository to do your own modifications. You are free to use this plugin in your projects. If you intent to resell a modified version of the plugin, please include some kind of attribution (can be a text file or a message in the log on boot). For example "Code based on the Advanced Input Field plugin by Jeroen van Pienbroek, link: https://github.com/development-fennecx/AdvancedInputField". While the attribution is not required, I would appreciate it.
+
 This plugin provides a more Advanced Input Field that has a lot more features and properties than the official Unity InputField. It still inherits from the Selectable base class, so it can be used with the Unity EventSystem.
 Also, it has it's own bindings for the native keyboards. This made it possible to provide a better user experience and to fix several issues that existed in the official Unity InputField.
 
