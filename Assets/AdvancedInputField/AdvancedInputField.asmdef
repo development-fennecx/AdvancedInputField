@@ -20,5 +20,27 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "1.0.0",
+            "define": "ADVANCEDINPUTFIELD_TEXTMESHPRO"
+        },
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "[1.5.0,2.0.0)",
+            "define": "TEXTMESHPRO_1_5"
+        },
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "[2.1.0,3.0.0)",
+            "define": "TEXTMESHPRO_2_1"
+        },
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "[3.0.0,4.0.0)",
+            "define": "TEXTMESHPRO_3_0"
+        }
+    ]
 }
