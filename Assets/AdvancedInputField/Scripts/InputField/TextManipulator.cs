@@ -242,6 +242,8 @@ namespace AdvancedInputFieldPlugin
 			{
 				Insert(processedInput);
 			}
+
+            		TextNavigator.HideActionBar();
 		}
 
 		/// <summary>Cuts current text selection</summary>
@@ -265,6 +267,8 @@ namespace AdvancedInputFieldPlugin
 			{
 				DeleteSelection();
 			}
+
+            		TextNavigator.HideActionBar();
 		}
 
 		/// <summary>Replaces current word with given text</summary>
