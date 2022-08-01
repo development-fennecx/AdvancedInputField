@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -171,11 +168,7 @@ namespace AdvancedInputFieldPlugin
 			base.OnDestroy();
 			if(frontRenderer != null)
 			{
-				AdvancedInputField inputField = GetComponentInParent<AdvancedInputField>();
-				if(inputField == null || !inputField.WithinAwake)
-				{
-					Destroy(frontRenderer.gameObject);
-				}
+				Destroy(frontRenderer.gameObject);
 			}
 		}
 

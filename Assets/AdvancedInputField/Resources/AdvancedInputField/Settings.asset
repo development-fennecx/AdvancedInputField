@@ -26,7 +26,7 @@ MonoBehaviour:
       type: 3}
     basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94,
       type: 3}
-    touchTextSelectionAllowed: 1
+    touchTextSelectionAllowed: 0
     touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd,
       type: 3}
     touchSelectionCursorsScale: 1
@@ -71,4 +71,3 @@ MonoBehaviour:
     type: 3}
   doubleTapThreshold: 0.5
   holdThreshold: 1
-  passwordMaskingCharacter: 42

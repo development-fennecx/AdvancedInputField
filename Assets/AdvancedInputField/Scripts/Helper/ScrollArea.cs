@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -325,7 +322,6 @@ namespace AdvancedInputFieldPlugin
 			}
 
 			CanvasUpdateRegistry.RegisterCanvasElementForLayoutRebuild(this);
-			UpdateScrollbarVisibility();
 		}
 
 		protected override void OnDisable()
@@ -346,7 +342,6 @@ namespace AdvancedInputFieldPlugin
 			m_Velocity = Vector2.zero;
 			LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
 			base.OnDisable();
-			UpdateScrollbarVisibility();
 		}
 
 		public override bool IsActive()
@@ -758,7 +753,7 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(Application.isPlaying)
 				{
-					return (m_ContentBounds.size.x > m_ViewBounds.size.x + 0.01f) && enabled;
+					return m_ContentBounds.size.x > m_ViewBounds.size.x + 0.01f;
 				}
 				return true;
 			}
@@ -769,7 +764,7 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(Application.isPlaying)
 				{
-					return (m_ContentBounds.size.y > m_ViewBounds.size.y + 0.01f) && enabled;
+					return m_ContentBounds.size.y > m_ViewBounds.size.y + 0.01f;
 				}
 				return true;
 			}

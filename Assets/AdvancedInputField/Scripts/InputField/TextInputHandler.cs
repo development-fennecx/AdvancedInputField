@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -41,9 +43,6 @@ namespace AdvancedInputFieldPlugin
         /// <summary>The ActionBar</summary>
         protected ActionBar actionBar;
 
-        /// <summary>The amount of taps (rapidly after each other)</summary>
-        private int tapCount;
-
         /// <summary>The character position when press started</summary>
         public int PressCharPosition { get { return pressCharPosition; } }
 
@@ -78,7 +77,6 @@ namespace AdvancedInputFieldPlugin
 
             actionBar.transform.SetParent(InputField.transform);
             actionBar.transform.localScale = Vector3.one;
-            actionBar.CheckInputFieldScale();
             actionBar.transform.localPosition = Vector3.zero;
 
             actionBar.Initialize(InputField, this, TextNavigator);
@@ -194,75 +192,63 @@ namespace AdvancedInputFieldPlugin
         /// <param name="position">The position of th event</param>
         internal virtual void OnTap(Vector2 position)
         {
-#if UNITY_STANDALONE || UNITY_WSA
-			if(StandaloneTap(position)) { return; }
+#if UNITY_STANDALONE || UNITY_WSA || UNITY_WEBGL
+            if (StandaloneTap(position)) { return; }
 #endif
 
             if (lastTapTime > 0 && Time.realtimeSinceStartup - lastTapTime <= Settings.DoubleTapThreshold)
             {
-                tapCount++;
-                if (tapCount == 2)
-                {
-                    OnDoubleTap(position);
-                }
+                OnDoubleTap(position);
             }
             else
             {
-                tapCount = 1;
                 OnSingleTap(position);
             }
 
-            Engine.EventHandler.InvokeTextTap(tapCount, position);
             lastTapTime = Time.realtimeSinceStartup;
         }
 
-#if UNITY_STANDALONE || UNITY_WSA
-		private bool StandaloneTap(Vector2 position)
-		{
-			if(actionBar != null)
-			{
-				if(Input.GetMouseButtonUp(0)) //Left mouse button was clicked
-				{
-					if(lastTapTime > 0 && Time.realtimeSinceStartup - lastTapTime <= Settings.DoubleTapThreshold)
-					{
-						tapCount++;
-						if(tapCount == 2)
-						{
-							OnDoubleTap(position);
-						}
-					}
-					else
-					{
-						tapCount = 1;
-						OnSingleTap(position);
-					}
+#if UNITY_STANDALONE || UNITY_WSA || UNITY_WEBGL
+        private bool StandaloneTap(Vector2 position)
+        {
+            if (actionBar != null)
+            {
+                if (Input.GetMouseButtonUp(0)) //Left mouse button was clicked
+                {
+                    if (lastTapTime > 0 && Time.realtimeSinceStartup - lastTapTime <= Settings.DoubleTapThreshold)
+                    {
+                        OnDoubleTap(position);
+                    }
+                    else
+                    {
+                        OnSingleTap(position);
+                    }
 
-					Engine.EventHandler.InvokeTextTap(tapCount, position);
-					lastTapTime = Time.realtimeSinceStartup;
-					TextNavigator.HideActionBar();
-				}
-				else if(Input.GetMouseButtonUp(1)) //Right mouse button was clicked
-				{
-					if(Engine.HasSelection)
-					{
-						int visibleCaretPosition = TextNavigator.DetermineVisibleCaretPosition(position);
-						if(visibleCaretPosition < Engine.VisibleSelectionStartPosition || visibleCaretPosition >= Engine.VisibleSelectionEndPosition) //Only change caret if clicked outside of selection
-						{
-							TextNavigator.ResetCaret(position);
-						}
-					}
-					else
-					{
-						TextNavigator.ResetCaret(position);
-					}
-					TextNavigator.ShowActionBar();
-				}
+                    lastTapTime = Time.realtimeSinceStartup;
+                    TextNavigator.HideActionBar();
+                }
+                else if (Input.GetMouseButtonUp(1)) //Right mouse button was clicked
+                {
+                    if (Engine.HasSelection)
+                    {
+                        int visibleCaretPosition = TextNavigator.DetermineVisibleCaretPosition(position);
+                        if (visibleCaretPosition < Engine.VisibleSelectionStartPosition || visibleCaretPosition >= Engine.VisibleSelectionEndPosition) //Only change caret if clicked outside of selection
+                        {
+                            TextNavigator.ResetCaret(position);
+                        }
+                    }
+                    else
+                    {
+                        TextNavigator.ResetCaret(position);
+                    }
+                    TextNavigator.ShowActionBar();
+                }
 
-				return true;
-			}
+                return true;
+            }
 
-			return false;
-		}
+            return false;
+        }
 #endif
 
         /// <summary>Event callback for single tap</summary>
@@ -287,14 +273,6 @@ namespace AdvancedInputFieldPlugin
             if (InputField.Text.Length > 0)
             {
                 TextNavigator.SelectCurrentWord();
-                if (!Engine.HasSelection && InputField.CanUseActionBar) //Just show the ActionBar when no word was selected
-                {
-                    if (TextNavigator.ActionBar == null)
-                    {
-                        InitActionBar(Engine);
-                    }
-                    TextNavigator.ShowActionBar();
-                }
             }
             else if (InputField.CanUseActionBar)
             {
@@ -340,7 +318,7 @@ namespace AdvancedInputFieldPlugin
                 }
 
 #if !UNITY_EDITOR
-                keyboard.State = KeyboardState.PENDING_HIDE;
+				keyboard.State = KeyboardState.PENDING_HIDE;
 #endif
                 keyboard.HideKeyboard();
                 keyboard.ClearEventQueue(); //Should be last event to process, so clear queue

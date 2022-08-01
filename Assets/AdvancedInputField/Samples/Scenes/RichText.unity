@@ -890,7 +890,6 @@ MonoBehaviour:
   characterValidation: 7
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -901,7 +900,6 @@ MonoBehaviour:
   caretWidth: 4
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -909,9 +907,7 @@ MonoBehaviour:
   maxScrollTransitionTime: 3
   fastScrollSensitivity: 5
   resizeMinWidth: 0
-  resizeMaxWidth: 0
   resizeMinHeight: 0
-  resizeMaxHeight: 0
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -934,12 +930,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -1184,8 +1174,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496124577}
   m_HandleRect: {fileID: 2138123696}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1392,7 +1382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.00003934461}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.000066244625}
   m_SizeDelta: {x: 1050.2069, y: 62.068962}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &601374358
@@ -3215,7 +3205,6 @@ MonoBehaviour:
   keyboardScrollMode: 0
   transitionTime: 0.5
   normalizedOffsetY: 0.025
-  scrollSpaceMultiplier: 3
   onKeyboardScrollerStateChanged:
     m_PersistentCalls:
       m_Calls: []

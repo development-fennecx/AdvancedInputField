@@ -1,21 +1,29 @@
-2.1.6:
+2.0.9:
+Several bugfixes + Split Decimal CharacterValidation into DECIMAL and DECIMAL_FORCE_POINT
+
+2.0.8:
+Several bugfixes
+
+2.0.7:
+Several improvements & bugfixes
+
+2.0.6:
+- ActionBar & Autofill improvements + several bugfixes
+
+2.0.5:
+- Several bugfixes + Added ResizeMaxWidth & ResizeMaxHeight properties
+
+2.0.4:
+- Moved menu items under "Tools" + several bugfixes
+
+2.0.3:
+- Added method to get caret transform + several bugfixes
+
+2.0.2:
 - Several bugfixes
-- Made project available opensource (https://github.com/development-fennecx/AdvancedInputField), because development/support has stopped. See the support thread for more info: https://forum.unity.com/threads/advanced-input-field-2.1028128/
 
-2.1.5:
-- Several bugfixes & added several properties
+2.0.1:
+- Several bugfixes + Moved doubleTapThreshold & holdThreshold to the Global Settings of the plugin
 
-2.1.4:
-- Several bugfixes and added OnTextTap event to detect rapid taps on the text
-
-2.1.3:
-- Several bugfixes
-
-2.1.2:
-- Several bugfixes
-
-2.1.1:
-- Hotfix release to fix errors when expanding General tab in inspector
-
-2.1.0:
-- RichTextBindings functionality and multiple bugfixes
+2.0.0:
+- Rewritten core of the plugin for optimalization and to support more complex features like full emoji range support and rich text

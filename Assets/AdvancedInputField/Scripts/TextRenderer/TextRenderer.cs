@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
@@ -80,7 +77,6 @@ namespace AdvancedInputFieldPlugin
 		public virtual bool Visible { get { throw new NotImplementedException(NOT_CONFIGURED_ERROR); } }
 		public float CaretWidth { get; set; }
 		public virtual bool Multiline { get { throw new NotImplementedException(NOT_CONFIGURED_ERROR); } set { throw new System.NotImplementedException(NOT_CONFIGURED_ERROR); } }
-		public float MultilineMaxWidth { get; protected set; }
 		public virtual bool RichTextEnabled { get { throw new NotImplementedException(NOT_CONFIGURED_ERROR); } set { throw new NotImplementedException(NOT_CONFIGURED_ERROR); } }
 		public virtual TextAlignment TextAlignment { get { throw new NotImplementedException(NOT_CONFIGURED_ERROR); } }
 
@@ -132,8 +128,6 @@ namespace AdvancedInputFieldPlugin
 				rectTransform.offsetMin = new Vector2(0, 0);
 				rectTransform.offsetMax = new Vector2(0, 0);
 				rectTransform.localScale = Vector3.one;
-				rectTransform.localRotation = Quaternion.identity;
-
 				transformTracker.Add(this, rectTransform, DrivenTransformProperties.All);
 			}
 		}

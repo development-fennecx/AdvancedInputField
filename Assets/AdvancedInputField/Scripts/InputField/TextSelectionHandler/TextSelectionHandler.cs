@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
 {
@@ -35,7 +32,6 @@ namespace AdvancedInputFieldPlugin
 			rectTransform.offsetMin = new Vector2(0, 0);
 			rectTransform.offsetMax = new Vector2(0, 0);
 			rectTransform.localScale = Vector3.one;
-			rectTransform.localRotation = Quaternion.identity;
 
 			transformTracker.Add(this, rectTransform, DrivenTransformProperties.All);
 		}
@@ -63,7 +59,6 @@ namespace AdvancedInputFieldPlugin
 			rectTransform.offsetMin = new Vector2(0, 0);
 			rectTransform.offsetMax = new Vector2(0, 0);
 			rectTransform.localScale = Vector3.one;
-			rectTransform.localRotation = Quaternion.identity;
 
 			transformTracker.Add(this, rectTransform, DrivenTransformProperties.All);
 		}

@@ -1,7 +1,6 @@
-2.1.6:
-- Bugfix: Fixed emoji asset not getting saved correctly after generation in some Unity versions
-- Bugfix: Fixed issue that selection cursors didn't clamp correctly horizontally when using 
-CursorClampMode TEXT_BOUNDS on a multiline inputfield
-- Bugfix: Fixed a small issue that ActionBar could be shown even when disabled in settings
-- Bugfix: Implemented switch for new Unity input system
-- Change: Added WebGL to assembly definition file
+2.0.9
+- Bugfix: Fixed issue that the text edit state was not getting synced properly with native code when reselecting an input field
+- Change: Split Decimal character validation into DECIMAL and DECIMAL_FORCE_POINT. DECIMAL will allow both dot and comma character as the decimal separator and DECIMAL_FORCE_POINT will automatically convert comma characters to a decimal point/dot character
+- Bugfix Android: Fixed issue on Android that keyboard was not closing when pausing app
+- Bugfix Android: Fixed issue that keyboard restore didn't work correctly on some Android devices after resuming app
+- Bugfix Editor: Fixed SimulatorKeyboard error when selecting InputField (from code) immediately in Awake()

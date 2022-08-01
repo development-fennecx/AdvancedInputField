@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
 {
@@ -147,7 +144,7 @@ namespace AdvancedInputFieldPlugin
 						supportedTags[i] = new RichTextTagInfo(RichTextTagType.SINGLE_PARAMETER_TAG_PAIR, "<width={0}>", "</width>");
 						break;
 					case RichTextTag.SPRITE:
-						supportedTags[i] = new RichTextTagInfo(RichTextTagType.SINGLE_PARAMETER_SINGLE_TAG, "<sprite name={0}>", null);
+						supportedTags[i] = new RichTextTagInfo(RichTextTagType.SINGLE_PARAMETER_SINGLE_TAG, "<sprite={0}>", null);
 						break;
 				}
 			}

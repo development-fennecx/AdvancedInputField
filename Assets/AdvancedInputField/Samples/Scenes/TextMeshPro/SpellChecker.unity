@@ -1346,7 +1346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -0.00010025419}
+  m_AnchoredPosition: {x: -0.00012207031, y: -0.000120357705}
   m_SizeDelta: {x: 1137.0778, y: 64.40407}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1373448600
@@ -1447,7 +1447,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -1458,7 +1457,6 @@ MonoBehaviour:
   caretWidth: 4
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -1513,12 +1511,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 1

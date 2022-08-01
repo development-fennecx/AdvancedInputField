@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace AdvancedInputFieldPlugin.Editor
@@ -35,7 +32,7 @@ namespace AdvancedInputFieldPlugin.Editor
 	public class VersionInfoWindow: EditorWindow
 	{
 		public const string TITLE = "Advanced Input Field";
-		public const string VERSION_NAME = "2.1.6";
+		public const string VERSION_NAME = "2.0.9";
 		public const string RELEASE_NOTES_RESOURCE_PATH = "AdvancedInputField/release_notes";
 		public const string CHANGELOG_RESOURCE_PATH = "AdvancedInputField/changelog";
 		public const string DONT_SHOW_ON_STARTUP_KEY = "DONT_SHOW_ON_STARTUP_" + VERSION_NAME;

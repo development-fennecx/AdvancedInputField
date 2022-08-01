@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
@@ -87,10 +84,6 @@ namespace AdvancedInputFieldPlugin
 		[SerializeField, CustomName("Hold Threshold")]
 		private float holdThreshold = 1.0f;
 
-		[Tooltip("The character to use when masking text for password input")]
-		[SerializeField, CustomName("Password Masking character")]
-		private char passwordMaskingCharacter = '*';
-
 		public LocalizationData[] Localizations { get { return localizations; } }
 		public PlatformSettingsData[] PlatformSettings { get { return platformSettings; } set { platformSettings = value; } }
 		public bool SimulateMobileBehaviourInEditor { get { return simulateMobileBehaviourInEditor; } }
@@ -98,6 +91,5 @@ namespace AdvancedInputFieldPlugin
 		public Canvas LandscapeKeyboardCanvasPrefab { get { return landscapeKeyboardCanvasPrefab; } }
 		public float DoubleTapThreshold { get { return doubleTapThreshold; } }
 		public float HoldThreshold { get { return holdThreshold; } }
-		public char PasswordMaskingCharacter { get { return passwordMaskingCharacter; } }
 	}
 }

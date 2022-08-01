@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using UnityEditor;
 using UnityEditor.AnimatedValues;
@@ -47,7 +49,6 @@ namespace AdvancedInputFieldPlugin.Editor
 		private SerializedProperty caretWidthProperty;
 		private SerializedProperty caretColorProperty;
 		private SerializedProperty selectionColorProperty;
-		private SerializedProperty selectionBehindTextProperty;
 
 		private static bool generalFoldout;
 		private SerializedProperty textProperty;
@@ -64,7 +65,6 @@ namespace AdvancedInputFieldPlugin.Editor
 		private SerializedProperty characterValidationProperty;
 		private SerializedProperty characterValidatorProperty;
 		private SerializedProperty emojisAllowedProperty;
-		private SerializedProperty richTextBindingsAllowedProperty;
 
 		private static bool processingFoldout;
 		private SerializedProperty liveProcessingFilterProperty;
@@ -80,8 +80,6 @@ namespace AdvancedInputFieldPlugin.Editor
 		private SerializedProperty onTextSelectionChangedProperty;
 		private SerializedProperty onSizeChangedProperty;
 		private SerializedProperty onSpecialKeyPressedProperty;
-		private SerializedProperty onTextTapProperty;
-		private SerializedProperty onActionBarActionProperty;
 
 		private static bool otherFoldout;
 		private SerializedProperty actionBarEnabledProperty;
@@ -129,7 +127,6 @@ namespace AdvancedInputFieldPlugin.Editor
 			characterValidationProperty = serializedObject.FindProperty("characterValidation");
 			characterValidatorProperty = serializedObject.FindProperty("characterValidator");
 			emojisAllowedProperty = serializedObject.FindProperty("emojisAllowed");
-			richTextBindingsAllowedProperty = serializedObject.FindProperty("richTextBindingsAllowed");
 			liveProcessingFilterProperty = serializedObject.FindProperty("liveProcessingFilter");
 			liveDecorationFilterProperty = serializedObject.FindProperty("liveDecorationFilter");
 			postDecorationFilterProperty = serializedObject.FindProperty("postDecorationFilter");
@@ -140,7 +137,6 @@ namespace AdvancedInputFieldPlugin.Editor
 			caretWidthProperty = serializedObject.FindProperty("caretWidth");
 			caretColorProperty = serializedObject.FindProperty("caretColor");
 			selectionColorProperty = serializedObject.FindProperty("selectionColor");
-			selectionBehindTextProperty = serializedObject.FindProperty("selectionBehindText");
 			readOnlyProperty = serializedObject.FindProperty("readOnly");
 			scrollBehaviourOnEndEditProperty = serializedObject.FindProperty("scrollBehaviourOnEndEdit");
 			scrollBarsVisibilityModeProperty = serializedObject.FindProperty("scrollBarsVisibilityMode");
@@ -159,8 +155,6 @@ namespace AdvancedInputFieldPlugin.Editor
 			onTextSelectionChangedProperty = serializedObject.FindProperty("onTextSelectionChanged");
 			onSizeChangedProperty = serializedObject.FindProperty("onSizeChanged");
 			onSpecialKeyPressedProperty = serializedObject.FindProperty("onSpecialKeyPressed");
-			onTextTapProperty = serializedObject.FindProperty("onTextTap");
-			onActionBarActionProperty = serializedObject.FindProperty("onActionBarAction");
 			actionBarEnabledProperty = serializedObject.FindProperty("actionBarEnabled");
 			actionBarCutProperty = serializedObject.FindProperty("actionBarCut");
 			actionBarCopyProperty = serializedObject.FindProperty("actionBarCopy");
@@ -313,13 +307,6 @@ namespace AdvancedInputFieldPlugin.Editor
 				EditorGUILayout.PropertyField(caretWidthProperty);
 				EditorGUILayout.PropertyField(caretColorProperty);
 				EditorGUILayout.PropertyField(selectionColorProperty);
-
-				EditorGUI.BeginChangeCheck();
-				EditorGUILayout.PropertyField(selectionBehindTextProperty);
-				if(EditorGUI.EndChangeCheck())
-				{
-					inputField.SelectionBehindText = selectionBehindTextProperty.boolValue;
-				}
 			}
 		}
 		#endregion
@@ -371,7 +358,6 @@ namespace AdvancedInputFieldPlugin.Editor
 				}
 
 				EditorGUILayout.PropertyField(emojisAllowedProperty, new GUIContent("Emojis Allowed"));
-				EditorGUILayout.PropertyField(richTextBindingsAllowedProperty, new GUIContent("Rich Text Bindings Allowed"));
 				DrawCharacterLimitProperty(inputField);
 				DrawLineLimitProperty(inputField);
 				DrawContentTypeProperties(inputField);
@@ -477,8 +463,6 @@ namespace AdvancedInputFieldPlugin.Editor
 				EditorGUILayout.PropertyField(onTextSelectionChangedProperty);
 				EditorGUILayout.PropertyField(onSizeChangedProperty);
 				EditorGUILayout.PropertyField(onSpecialKeyPressedProperty);
-				EditorGUILayout.PropertyField(onTextTapProperty);
-				EditorGUILayout.PropertyField(onActionBarActionProperty);
 			}
 		}
 		#endregion

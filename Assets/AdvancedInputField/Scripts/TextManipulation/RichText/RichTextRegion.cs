@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace AdvancedInputFieldPlugin
@@ -13,7 +10,6 @@ namespace AdvancedInputFieldPlugin
 
 		public string symbolText;
 		public bool isSymbol;
-		public bool isModifiable;
 
 		public int startContentPosition;
 		public int endContentPosition;
@@ -35,7 +31,7 @@ namespace AdvancedInputFieldPlugin
 
 		public string RichText { get { return richText; } }
 
-		public RichTextRegion(string text, List<string> startTags = null, List<string> endTags = null, bool isModifiable = true)
+		public RichTextRegion(string text, List<string> startTags = null, List<string> endTags = null)
 		{
 			Text = text;
 			if(startTags != null)
@@ -48,14 +44,10 @@ namespace AdvancedInputFieldPlugin
 				this.startTags = new List<string>();
 				this.endTags = new List<string>();
 			}
-
-			this.isModifiable = isModifiable;
 		}
 
 		public void RemoveTag(string endTag)
 		{
-			if(!isModifiable) { return; }
-
 			int index = endTags.IndexOf(endTag);
 			if(index != -1) //Found tags, so safe to remove
 			{
@@ -66,8 +58,6 @@ namespace AdvancedInputFieldPlugin
 
 		public void UpdateTag(string startTag, string endTag)
 		{
-			if(!isModifiable) { return; }
-
 			int index = endTags.IndexOf(endTag);
 			if(index != -1) //Found tags, so safe to update
 			{
@@ -77,8 +67,6 @@ namespace AdvancedInputFieldPlugin
 
 		public void AddTag(string startTag, string endTag)
 		{
-			if(!isModifiable) { return; }
-
 			int index = endTags.IndexOf(endTag);
 			if(index == -1) //No tags found, so safe to add
 			{
@@ -93,8 +81,6 @@ namespace AdvancedInputFieldPlugin
 
 		public void CopyTags(RichTextRegion otherRegion)
 		{
-			if(!isModifiable) { return; }
-
 			startTags.Clear();
 			startTags.AddRange(otherRegion.startTags);
 			endTags.Clear();

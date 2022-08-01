@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
@@ -46,15 +43,6 @@ namespace AdvancedInputFieldPlugin
 			this.richTextRegions = new List<RichTextRegion>();
 		}
 
-		public TextRegion(RichTextBindingData tagData)
-		{
-			Content = tagData.codePoint.ToString();
-			this.isSymbol = true;
-
-			this.richTextContent = tagData.richText;
-			this.richTextRegions = new List<RichTextRegion>();
-		}
-
 		public override string ToString()
 		{
 			return string.Format("Content: {0}, Length: {1}, Start: {2}, End: {3}, Symbol: {4}",
@@ -81,14 +69,7 @@ namespace AdvancedInputFieldPlugin
 
 		public void ConfigureSymbol()
 		{
-			if(NativeKeyboardManager.RichTextBindingEngine.TryGetBindingFromCodePoint(content[0], out RichTextBindingData tagData))
-			{
-				RichTextRegion richTextRegion = richTextRegions[0];
-				richTextRegion.isSymbol = true;
-				richTextRegion.symbolText = tagData.richText;
-				richTextRegion.isModifiable = false;
-			}
-			else if(NativeKeyboardManager.EmojiEngine.TryGetEmoji(content, out EmojiData emojiData))
+			if(NativeKeyboardManager.EmojiEngine.TryGetEmoji(content, out EmojiData emojiData))
 			{
 				RichTextRegion richTextRegion = richTextRegions[0];
 				richTextRegion.isSymbol = true;
@@ -288,32 +269,26 @@ namespace AdvancedInputFieldPlugin
 						}
 						else
 						{
-							if(richTextRegion.isModifiable)
-							{
-								int splitIndex = end - startTextPosition;
-								RichTextRegion[] splitRegions = richTextRegion.Split(splitIndex);
-								richTextRegions.RemoveAt(i);
-								richTextRegions.Insert(i, splitRegions[0]);
-								richTextRegions.Insert(i + 1, splitRegions[1]);
-								i--;
-								length++;
-								continue;
-							}
-						}
-					}
-					else //Split
-					{
-						if(richTextRegion.isModifiable)
-						{
-							int splitIndex = start - startTextPosition;
+							int splitIndex = end - startTextPosition;
 							RichTextRegion[] splitRegions = richTextRegion.Split(splitIndex);
 							richTextRegions.RemoveAt(i);
 							richTextRegions.Insert(i, splitRegions[0]);
 							richTextRegions.Insert(i + 1, splitRegions[1]);
-							textOffset += splitIndex;
+							i--;
 							length++;
 							continue;
 						}
+					}
+					else //Split
+					{
+						int splitIndex = start - startTextPosition;
+						RichTextRegion[] splitRegions = richTextRegion.Split(splitIndex);
+						richTextRegions.RemoveAt(i);
+						richTextRegions.Insert(i, splitRegions[0]);
+						richTextRegions.Insert(i + 1, splitRegions[1]);
+						textOffset += splitIndex;
+						length++;
+						continue;
 					}
 				}
 

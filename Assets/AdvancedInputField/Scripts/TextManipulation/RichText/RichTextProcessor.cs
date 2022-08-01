@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using AIFLogger;
+﻿using AIFLogger;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -12,7 +9,6 @@ namespace AdvancedInputFieldPlugin
 	{
 		public RichTextTagInfo[] supportedTags;
 		public bool emojisAllowed;
-		public bool richTextBindingsAllowed;
 
 		public TextEditFrame LastRichTextEditFrame { get; private set; }
 		public TextEditFrame LastTextEditFrame { get; private set; }
@@ -21,13 +17,11 @@ namespace AdvancedInputFieldPlugin
 		private StringBuilder stringBuilder;
 		public string RichText { get { return LastRichTextEditFrame.text; } }
 		public string Text { get { return LastTextEditFrame.text; } }
-		public List<TextRegion> TextRegions { get { return textRegions; } }
 
-		public RichTextProcessor(RichTextTagInfo[] supportedTags, bool emojisAllowed, bool richTextBindingsAllowed)
+		public RichTextProcessor(RichTextTagInfo[] supportedTags, bool emojisAllowed)
 		{
 			this.supportedTags = supportedTags;
 			this.emojisAllowed = emojisAllowed;
-			this.richTextBindingsAllowed = richTextBindingsAllowed;
 			this.textRegions = new List<TextRegion>();
 			this.stringBuilder = new StringBuilder();
 		}
@@ -57,7 +51,7 @@ namespace AdvancedInputFieldPlugin
 			}
 			else
 			{
-				for(int i = 0; i < length; i++)
+				for(int i = 0; i < length - 1; i++)
 				{
 					TextRegion region = parsedTextRegions[i];
 					if(region.isSymbol) //Symbols can't be merged
@@ -122,10 +116,7 @@ namespace AdvancedInputFieldPlugin
 
 		public List<RichTextRegion> ParseRichTextRegions(string richText)
 		{
-			if(emojisAllowed || richTextBindingsAllowed)
-			{
-				richText = ConvertSpecialTags(richText);
-			}
+			richText = ConvertSingleTags(richText);
 			List<RichTextRegion> regions = new List<RichTextRegion>();
 			if(string.IsNullOrEmpty(richText)) { return regions; }
 
@@ -223,7 +214,7 @@ namespace AdvancedInputFieldPlugin
 			return regions;
 		}
 
-		private string ConvertSpecialTags(string richText)
+		private string ConvertSingleTags(string richText)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
 			int tagStartIndex = -1;
@@ -245,14 +236,9 @@ namespace AdvancedInputFieldPlugin
 				{
 					string tagText = richText.Substring(tagStartIndex, (i - tagStartIndex) + 1);
 
-					if(emojisAllowed && IsValidSingleTagText(tagText) && NativeKeyboardManager.EmojiEngine.TryGetSprite(tagText, out EmojiData emojiData))
+					if(IsValidSingleTagText(tagText) && NativeKeyboardManager.EmojiEngine.TryGetSprite(tagText, out EmojiData emojiData))
 					{
 						stringBuilder.Append(emojiData.text);
-					}
-					else if(richTextBindingsAllowed && NativeKeyboardManager.RichTextBindingEngine.TryFindNextBindingInRichText(richText, tagStartIndex, out RichTextBindingData tagData))
-					{
-						stringBuilder.Append(tagData.codePoint);
-						i = tagStartIndex + tagData.richText.Length - 1;
 					}
 					else
 					{
@@ -311,18 +297,7 @@ namespace AdvancedInputFieldPlugin
 			for(int i = 0; i < length; i++)
 			{
 				char c = text[i];
-				if(richTextBindingsAllowed && NativeKeyboardManager.RichTextBindingEngine.TryGetBindingFromCodePoint(c, out RichTextBindingData tagData))
-				{
-					if(stringBuilder.Length > 0)
-					{
-						string content = stringBuilder.ToString();
-						regions.Add(new TextRegion(content));
-						stringBuilder.Clear();
-					}
-
-					regions.Add(new TextRegion(tagData));
-				}
-				else if(emojisAllowed && NativeKeyboardManager.EmojiEngine.TryFindNextEmojiInText(text, i, out EmojiData emojiData))
+				if(NativeKeyboardManager.EmojiEngine.TryFindNextEmojiInText(text, i, out EmojiData emojiData))
 				{
 					if(stringBuilder.Length > 0)
 					{
@@ -527,43 +502,16 @@ namespace AdvancedInputFieldPlugin
 					int amount = Mathf.Abs(textEditFrame.text.Length - LastTextEditFrame.text.Length);
 					if(textEditFrame.selectionStartPosition > LastTextEditFrame.selectionStartPosition) //Text insert
 					{
-						if(CheckWordReplaced(textEditFrame.text, LastTextEditFrame.text, LastTextEditFrame.selectionStartPosition, out int wordStartPosition))
-						{
-							int deleteAmount = (LastTextEditFrame.selectionStartPosition - wordStartPosition);
-							DeleteInText(LastTextEditFrame.selectionStartPosition - deleteAmount, deleteAmount);
-							amount += deleteAmount;
-							string textToInsert = textEditFrame.text.Substring(LastTextEditFrame.selectionStartPosition - deleteAmount, amount);
-							InsertInText(textToInsert, LastTextEditFrame.selectionStartPosition - deleteAmount);
-						}
-						else
-						{
-							string textToInsert = textEditFrame.text.Substring(LastTextEditFrame.selectionStartPosition, amount);
-							InsertInText(textToInsert, LastTextEditFrame.selectionStartPosition);
-						}
+						string textToInsert = textEditFrame.text.Substring(LastTextEditFrame.selectionStartPosition, amount);
+						InsertInText(textToInsert, LastTextEditFrame.selectionStartPosition);
 					}
 					else if(textEditFrame.selectionStartPosition < LastTextEditFrame.selectionStartPosition) //Backwards delete
 					{
 						DeleteInText(textEditFrame.selectionStartPosition, amount); //Forward delete from current position
-						if(CheckWordReplaced(textEditFrame.text, LastTextEditFrame.text, textEditFrame.selectionStartPosition, out int wordStartPosition))
-						{
-							int deleteAmount = (textEditFrame.selectionStartPosition - wordStartPosition);
-							DeleteInText(textEditFrame.selectionStartPosition - deleteAmount, deleteAmount);
-							amount = deleteAmount;
-							string textToInsert = textEditFrame.text.Substring(textEditFrame.selectionStartPosition - deleteAmount, amount);
-							InsertInText(textToInsert, textEditFrame.selectionStartPosition - deleteAmount);
-						}
 					}
-					else if(amount > 0) //Forward delete
+					else //Forward delete
 					{
 						DeleteInText(textEditFrame.selectionStartPosition, amount); //Forward delete from current position
-					}
-					else if(CheckWordReplaced(textEditFrame.text, LastTextEditFrame.text, textEditFrame.selectionStartPosition, out int wordStartPosition))
-					{
-						int deleteAmount = (textEditFrame.selectionStartPosition - wordStartPosition);
-						DeleteInText(textEditFrame.selectionStartPosition - deleteAmount, deleteAmount);
-						amount = deleteAmount;
-						string textToInsert = textEditFrame.text.Substring(textEditFrame.selectionStartPosition - deleteAmount, amount);
-						InsertInText(textToInsert, textEditFrame.selectionStartPosition - deleteAmount);
 					}
 				}
 
@@ -574,46 +522,7 @@ namespace AdvancedInputFieldPlugin
 
 			LastTextEditFrame = textEditFrame;
 			LastRichTextEditFrame = richTextEditFrame;
-
 			return richTextEditFrame;
-		}
-
-		public bool CheckWordReplaced(string currentText, string lastText, int textPosition, out int wordStartPosition)
-		{
-			int currentLength = currentText.Length;
-			int lastLength = lastText.Length;
-			wordStartPosition = -1;
-			bool detectedWordChange = false;
-
-			for(int i = textPosition - 1; i >= 0; i--)
-			{
-				if(i < currentLength && i < lastLength)
-				{
-					char currentChar = currentText[i];
-					if(currentChar == ' ' || currentChar == '\n')
-					{
-						break;
-					}
-
-					char lastChar = lastText[i];
-					if(currentChar == ' ' || currentChar == '\n')
-					{
-						break;
-					}
-
-					if(currentChar != lastChar)
-					{
-						wordStartPosition = i;
-						detectedWordChange = true;
-					}
-				}
-				else
-				{
-					break;
-				}
-			}
-
-			return detectedWordChange;
 		}
 
 		public void InsertInText(string textToInsert, int textPosition)
@@ -876,10 +785,6 @@ namespace AdvancedInputFieldPlugin
 					if(endFound)
 					{
 						break;
-					}
-					else
-					{
-						textOffset += textRegion.content.Length;
 					}
 				}
 				else

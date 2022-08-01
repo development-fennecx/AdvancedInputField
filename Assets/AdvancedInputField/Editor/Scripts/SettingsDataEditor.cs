@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using UnityEditor;
 using UnityEngine;
@@ -24,7 +26,6 @@ namespace AdvancedInputFieldPlugin.Editor
 		private SerializedProperty landscapeKeyboardCanvasPrefabProperty;
 		private SerializedProperty doubleTapThresholdProperty;
 		private SerializedProperty holdThresholdProperty;
-		private SerializedProperty passwordMaskingCharacterProperty;
 		private int platformTab;
 
 		private void OnEnable()
@@ -36,7 +37,6 @@ namespace AdvancedInputFieldPlugin.Editor
 			landscapeKeyboardCanvasPrefabProperty = serializedObject.FindProperty("landscapeKeyboardCanvasPrefab");
 			doubleTapThresholdProperty = serializedObject.FindProperty("doubleTapThreshold");
 			holdThresholdProperty = serializedObject.FindProperty("holdThreshold");
-			passwordMaskingCharacterProperty = serializedObject.FindProperty("passwordMaskingCharacter");
 		}
 
 		public override void OnInspectorGUI()
@@ -53,7 +53,6 @@ namespace AdvancedInputFieldPlugin.Editor
 			EditorGUILayout.PropertyField(landscapeKeyboardCanvasPrefabProperty);
 			EditorGUILayout.PropertyField(doubleTapThresholdProperty);
 			EditorGUILayout.PropertyField(holdThresholdProperty);
-			EditorGUILayout.PropertyField(passwordMaskingCharacterProperty);
 			EditorGUILayout.Space();
 			EditorGUILayout.LabelField("Platform Specific:", EditorStyles.boldLabel);
 			DrawPlatformSpecificProperties();

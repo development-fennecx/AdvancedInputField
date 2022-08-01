@@ -1,9 +1,9 @@
 {
     "name": "AdvancedInputField",
+    "rootNamespace": "",
     "references": [
         "Unity.TextMeshPro"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
         "Android",
         "Editor",
@@ -42,5 +42,6 @@
             "expression": "[3.0.0,4.0.0)",
             "define": "TEXTMESHPRO_3_0"
         }
-    ]
+    ],
+    "noEngineReferences": false
 }

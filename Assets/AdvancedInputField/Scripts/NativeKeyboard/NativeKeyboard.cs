@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -153,7 +155,11 @@ namespace AdvancedInputFieldPlugin
 				Active = inputFieldSelected;
 				if(Active)
 				{
-					EnableUpdates();
+					if(!HardwareKeyboardConnected)
+					{
+						EnableUpdates();
+					}
+
 					if(Settings.MobileKeyboardBehaviour == MobileKeyboardBehaviour.USE_HARDWARE_KEYBOARD_WHEN_AVAILABLE)
 					{
 						EnableHardwareKeyboardUpdates();
@@ -161,7 +167,11 @@ namespace AdvancedInputFieldPlugin
 				}
 				else
 				{
-					DisableUpdates();
+					if(!HardwareKeyboardConnected)
+					{
+						DisableUpdates();
+					}
+
 					DisableHardwareKeyboardUpdates();
 				}
 			}
@@ -300,6 +310,15 @@ namespace AdvancedInputFieldPlugin
 		public void OnHardwareKeyboardChanged(bool connected)
 		{
 			HardwareKeyboardConnected = connected;
+			if(HardwareKeyboardConnected)
+			{
+				HideKeyboard();
+				DisableUpdates();
+			}
+			else
+			{
+				EnableUpdates();
+			}
 
 			if(onHardwareKeyboardChanged != null)
 			{

@@ -697,7 +697,6 @@ MonoBehaviour:
   characterValidation: 8
   characterValidator: {fileID: 11400000, guid: 0686d2ceefd19b642bab42069657e4da, type: 2}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -708,7 +707,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -716,9 +714,7 @@ MonoBehaviour:
   maxScrollTransitionTime: 3
   fastScrollSensitivity: 5
   resizeMinWidth: 0
-  resizeMaxWidth: 0
   resizeMinHeight: 0
-  resizeMaxHeight: 0
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -752,12 +748,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -2060,7 +2050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000040889776, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0.00004415477, y: 0.0000076293945}
   m_SizeDelta: {x: 480, y: 127}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &898887947
@@ -2533,7 +2523,6 @@ MonoBehaviour:
   characterValidation: 8
   characterValidator: {fileID: 11400000, guid: 8c7cc7ad2a3ba704fa8a43d1d7d7f650, type: 2}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -2544,7 +2533,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -2552,9 +2540,7 @@ MonoBehaviour:
   maxScrollTransitionTime: 3
   fastScrollSensitivity: 5
   resizeMinWidth: 0
-  resizeMaxWidth: 0
   resizeMinHeight: 0
-  resizeMaxHeight: 0
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2588,12 +2574,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -3444,7 +3424,6 @@ MonoBehaviour:
   characterValidation: 8
   characterValidator: {fileID: 11400000, guid: d7bad265328046d46bd735720e06f8d5, type: 2}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -3455,7 +3434,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -3463,9 +3441,7 @@ MonoBehaviour:
   maxScrollTransitionTime: 3
   fastScrollSensitivity: 5
   resizeMinWidth: 0
-  resizeMaxWidth: 0
   resizeMinHeight: 0
-  resizeMaxHeight: 0
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3499,12 +3475,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -4502,6 +4472,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000040889776, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0.00004415477, y: 0.000015258789}
   m_SizeDelta: {x: 254, y: 127}
   m_Pivot: {x: 0, y: 1}

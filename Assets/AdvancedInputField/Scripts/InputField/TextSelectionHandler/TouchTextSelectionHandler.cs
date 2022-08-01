@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace AdvancedInputFieldPlugin
@@ -413,20 +410,7 @@ namespace AdvancedInputFieldPlugin
 			}
 			else
 			{
-				Canvas canvas = GetComponentInParent<Canvas>();
-				if(canvas.renderMode == RenderMode.WorldSpace)
-				{
-					RectTransform canvasTransform = canvas.GetComponent<RectTransform>();
-					Vector3[] canvasCorners = new Vector3[4];
-					canvasTransform.GetWorldCorners(canvasCorners);
-					Vector2 canvasWorldSize = new Vector2(Mathf.Abs(canvasCorners[3].x - canvasCorners[1].x), Mathf.Abs(canvasCorners[3].y - canvasCorners[1].y));
-					float ratioY = canvasWorldSize.y / (canvas.worldCamera.orthographicSize * 2);
-					cursorSize = ((thumbSize * THUMB_SIZE_RATIO) / Screen.height) * (canvasTransform.rect.height / ratioY / canvas.scaleFactor);
-				}
-				else
-				{
-					cursorSize = (thumbSize * THUMB_SIZE_RATIO) / canvasScaleFactor;
-				}
+				cursorSize = (thumbSize * THUMB_SIZE_RATIO) / canvasScaleFactor;
 			}
 
 			cursorSize *= Settings.TouchSelectionCursorsScale;
@@ -514,24 +498,6 @@ namespace AdvancedInputFieldPlugin
 
 			float minX = 0;
 			float maxX = textContentSize.x;
-			if(InputField.Multiline)
-			{
-				TextRenderer textRenderer = Engine.GetActiveTextRenderer();
-				if(textRenderer.TextAlignment == TextAlignment.BOTTOM_LEFT || textRenderer.TextAlignment == TextAlignment.LEFT || textRenderer.TextAlignment == TextAlignment.TOP_LEFT)
-				{
-					maxX = textRenderer.MultilineMaxWidth;
-				}
-				else if(textRenderer.TextAlignment == TextAlignment.BOTTOM || textRenderer.TextAlignment == TextAlignment.CENTER || textRenderer.TextAlignment == TextAlignment.TOP)
-				{
-					float centerX = (maxX - minX) * 0.5f;
-					minX = centerX - (textRenderer.MultilineMaxWidth * 0.5f);
-					maxX = centerX + (textRenderer.MultilineMaxWidth * 0.5f);
-				}
-				if(textRenderer.TextAlignment == TextAlignment.BOTTOM_RIGHT || textRenderer.TextAlignment == TextAlignment.RIGHT || textRenderer.TextAlignment == TextAlignment.TOP_RIGHT)
-				{
-					minX = maxX - textRenderer.MultilineMaxWidth;
-				}
-			}
 			anchoredPosition.x = Mathf.Clamp(anchoredPosition.x, minX, maxX);
 
 			float minY = -textContentSize.y;

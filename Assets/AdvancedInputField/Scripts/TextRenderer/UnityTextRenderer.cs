@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -215,8 +212,6 @@ namespace AdvancedInputFieldPlugin
 			TextGenerator textGenerator = renderer.cachedTextGenerator;
 			IList<UICharInfo> characters = textGenerator.characters;
 			float textWidth = 0;
-			float minX = float.MaxValue;
-			float maxX = float.MinValue;
 
 			int length = characters.Count;
 			for(int i = 0; i < length; i++)
@@ -227,9 +222,6 @@ namespace AdvancedInputFieldPlugin
 				{
 					textWidth += (charInfo.charWidth / CanvasScaleFactor);
 				}
-
-				minX = Mathf.Min(charInfo.cursorPos.x, minX);
-				maxX = Mathf.Max(charInfo.cursorPos.x + charInfo.charWidth, maxX);
 			}
 
 			if(!Multiline || viewportTransform == null)
@@ -239,14 +231,6 @@ namespace AdvancedInputFieldPlugin
 			else
 			{
 				preferredSize.x = viewportTransform.rect.width;
-				if(maxX > minX)
-				{
-					MultilineMaxWidth = (maxX - minX) + CaretWidth;
-				}
-				else
-				{
-					MultilineMaxWidth = 0;
-				}
 			}
 
 			preferredSize.y = renderer.preferredHeight + (EXTRA_LINE_SPACING_MULTIPLIER * renderer.lineSpacing);

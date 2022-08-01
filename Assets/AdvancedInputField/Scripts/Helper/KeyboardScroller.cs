@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,12 +44,6 @@ namespace AdvancedInputFieldPlugin
 		[SerializeField]
 		[Range(0f, 1f)]
 		private float normalizedOffsetY = 0.025f;
-
-		/// <summary>The multiplier to use when resizing the content transform (for enough scrolling space)</summary>
-		[Tooltip("The multiplier to use when resizing the content transform (for enough scrolling space)")]
-		[SerializeField]
-		[Range(3f, 10f)]
-		private float scrollSpaceMultiplier = 3f;
 
 		[Tooltip("Event used when the keyboard scroller state changes")]
 		[SerializeField]
@@ -287,7 +283,6 @@ namespace AdvancedInputFieldPlugin
 			else
 			{
 				Camera camera = Canvas.worldCamera;
-				bottomY -= camera.transform.position.y;
 				normalizedY = (bottomY + camera.orthographicSize) / (camera.orthographicSize * 2);
 			}
 			normalizedY -= normalizedOffsetY;
@@ -337,22 +332,7 @@ namespace AdvancedInputFieldPlugin
 				GetNormalizedVertical(scrollTarget, out normalizedY, out normalizedHeight);
 				float normalizedKeyboardHeight = keyboardHeight / (float)Screen.height;
 
-				float moveY;
-				if(Canvas.renderMode == RenderMode.WorldSpace)
-				{
-					RectTransform canvasTransform = Canvas.GetComponent<RectTransform>();
-					Vector3[] canvasCorners = new Vector3[4];
-					canvasTransform.GetWorldCorners(canvasCorners);
-					Vector2 canvasWorldSize = new Vector2(Mathf.Abs(canvasCorners[3].x - canvasCorners[1].x), Mathf.Abs(canvasCorners[3].y - canvasCorners[1].y));
-					float ratioY = canvasWorldSize.y / (canvas.worldCamera.orthographicSize * 2);
-					moveY = (normalizedKeyboardHeight - (normalizedY - normalizedHeight)) * (canvasTransform.rect.height / ratioY / Canvas.scaleFactor);
-				}
-				else
-				{
-					moveY = (normalizedKeyboardHeight - (normalizedY - normalizedHeight)) * (Canvas.pixelRect.height / Canvas.scaleFactor);
-				}
-				if(Math.Abs(moveY) < 0.001f) { return; }
-
+				float moveY = (normalizedKeyboardHeight - (normalizedY - normalizedHeight)) * (Canvas.pixelRect.height / Canvas.scaleFactor);
 				if(keyboardScrollMode == KeyboardScrollMode.ONLY_SCROLL_IF_INPUTFIELD_BLOCKED && moveY < 0)
 				{
 					return;
@@ -363,7 +343,7 @@ namespace AdvancedInputFieldPlugin
 				endContentPosition.y += moveY;
 
 				startContentSize = scrollRect.content.sizeDelta;
-				endContentSize = originalContentSize * scrollSpaceMultiplier; //Multiply it so we have enough scroll space at the top and bottom
+				endContentSize = originalContentSize * 3; //*3, so we have enough scroll space at the top and bottom
 				currentTime = 0;
 				scrollRect.vertical = false; //Disable user scroll when transitioning
 

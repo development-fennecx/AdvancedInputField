@@ -259,7 +259,6 @@ MonoBehaviour:
   characterValidation: 5
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -270,7 +269,6 @@ MonoBehaviour:
   caretWidth: 2
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -314,12 +312,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -1375,7 +1367,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363889490}
   m_HandleRect: {fileID: 363889489}
   m_Direction: 2
-  m_Value: 0.99975204
+  m_Value: 0.999691
   m_Size: 0.9846147
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1513,7 +1505,6 @@ MonoBehaviour:
   characterValidation: 5
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -1524,7 +1515,6 @@ MonoBehaviour:
   caretWidth: 2
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -1568,12 +1558,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -1699,7 +1683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 192.75563}
+  m_AnchoredPosition: {x: 0, y: 541.7627}
   m_SizeDelta: {x: 0, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198429712
@@ -2626,7 +2610,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -2637,7 +2620,6 @@ MonoBehaviour:
   caretWidth: 2
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -2681,12 +2663,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -5781,7 +5757,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -5792,7 +5767,6 @@ MonoBehaviour:
   caretWidth: 2
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -5836,12 +5810,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -9061,7 +9029,6 @@ MonoBehaviour:
   keyboardScrollMode: 0
   transitionTime: 0.5
   normalizedOffsetY: 0.025
-  scrollSpaceMultiplier: 3
   onKeyboardScrollerStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10573,7 +10540,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -10584,7 +10550,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 1, g: 0.34137928, b: 0.34137928, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -10628,12 +10593,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -11754,7 +11713,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -11765,7 +11723,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 1, g: 0.34137928, b: 0.34137928, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -11809,12 +11766,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -12079,7 +12030,6 @@ MonoBehaviour:
   characterValidation: 0
   characterValidator: {fileID: 0}
   emojisAllowed: 0
-  richTextBindingsAllowed: 0
   liveProcessingFilter: {fileID: 0}
   liveDecorationFilter: {fileID: 0}
   postDecorationFilter: {fileID: 0}
@@ -12090,7 +12040,6 @@ MonoBehaviour:
   caretWidth: 3
   caretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   selectionColor: {r: 1, g: 0.34137928, b: 0.34137928, a: 0.7529412}
-  selectionBehindText: 1
   readOnly: 0
   scrollBehaviourOnEndEdit: 0
   scrollBarsVisibilityMode: 0
@@ -12134,12 +12083,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onSpecialKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextTap:
-    m_PersistentCalls:
-      m_Calls: []
-  onActionBarAction:
     m_PersistentCalls:
       m_Calls: []
   actionBarEnabled: 0
@@ -12726,7 +12669,6 @@ MonoBehaviour:
   keyboardScrollMode: 0
   transitionTime: 0.5
   normalizedOffsetY: 0.025
-  scrollSpaceMultiplier: 3
   onKeyboardScrollerStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12874,7 +12816,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 559930722}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.5
+  m_Size: 0.49999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

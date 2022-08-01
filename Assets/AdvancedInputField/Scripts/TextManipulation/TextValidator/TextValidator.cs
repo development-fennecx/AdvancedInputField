@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
 {
@@ -192,7 +189,9 @@ namespace AdvancedInputFieldPlugin
 				// Character . (dot, period, full stop) provided that it is not the first or last character,
 				// and provided also that it does not appear two or more times consecutively.
 
-				if(char.IsLetterOrDigit(ch)) return ch;
+				if(ch >= 'A' && ch <= 'Z') return ch;
+				if(ch >= 'a' && ch <= 'z') return ch;
+				if(ch >= '0' && ch <= '9') return ch;
 				if(ch == '@' && Util.IndexOf('@', text, textLength) == -1) return ch;
 				if(EMAIL_SPECIAL_CHARACTERS.IndexOf(ch) != -1) return ch;
 				if(ch == '.')

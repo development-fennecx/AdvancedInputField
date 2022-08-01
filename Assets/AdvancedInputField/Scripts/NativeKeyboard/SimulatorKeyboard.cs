@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace AdvancedInputFieldPlugin
@@ -283,7 +280,7 @@ namespace AdvancedInputFieldPlugin
 			if(gameObject == null) { return; }
 			canvas = GetComponentInParent<Canvas>(); //Update current Canvas
 
-			if(State == KeyboardState.VISIBLE || State == KeyboardState.PENDING_HIDE || State == KeyboardState.PENDING_SHOW)
+			if(State == KeyboardState.VISIBLE || State == KeyboardState.PENDING_HIDE)
 			{
 				currentTransitionTime = 0;
 				State = KeyboardState.PENDING_HIDE;
@@ -508,6 +505,7 @@ namespace AdvancedInputFieldPlugin
 		{
 			if(characterLimit != 0 && text.Length > characterLimit)
 			{
+				int amountOverLimit = text.Length - characterLimit;
 				text = text.Substring(0, characterLimit);
 				caretPosition = Mathf.Clamp(caretPosition, 0, text.Length);
 			}

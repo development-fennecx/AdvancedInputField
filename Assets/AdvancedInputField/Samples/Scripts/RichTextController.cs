@@ -1,5 +1,7 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+﻿//-----------------------------------------
+//			Advanced Input Field
+// Copyright (c) 2017 Jeroen van Pienbroek
+//------------------------------------------
 
 using AdvancedInputFieldPlugin;
 using UnityEngine;
@@ -76,6 +78,7 @@ namespace AdvancedInputFieldSamples
 			GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
 			if(selectedObject != null)
 			{
+				Debug.Log("SelectedObject: " + selectedObject);
 				AdvancedInputField inputField = selectedObject.GetComponent<AdvancedInputField>();
 				if(inputField != null)
 				{

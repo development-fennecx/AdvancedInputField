@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-#if ADVANCEDINPUTFIELD_TEXTMESHPRO
+﻿#if ADVANCEDINPUTFIELD_TEXTMESHPRO
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -259,8 +256,8 @@ namespace AdvancedInputFieldPlugin
 			int charIndex = 0;
 			Vector2 rectSize = renderer.rectTransform.rect.size;
 			float textWidth = 0;
-			minX = float.MaxValue;
-			maxX = float.MinValue;
+			minX = int.MaxValue;
+			maxX = int.MinValue;
 			TMP_CharacterInfo lastCharacterInfo = new TMP_CharacterInfo();
 			bool indexCharacters = true;
 			Characters.Clear();
@@ -346,14 +343,6 @@ namespace AdvancedInputFieldPlugin
 			else
 			{
 				preferredSize.x = viewportTransform.rect.width;
-				if(maxX > minX)
-				{
-					MultilineMaxWidth = (maxX - minX) + CaretWidth;
-				}
-				else
-				{
-					MultilineMaxWidth = 0;
-				}
 			}
 
 			if(fixNewline && Characters.Count == 0) //Workaround for bug with only newline character as text (TextMeshPro 2.1.0)

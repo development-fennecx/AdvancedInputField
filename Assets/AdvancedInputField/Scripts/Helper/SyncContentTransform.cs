@@ -1,7 +1,4 @@
-﻿// Copyright (c) Jeroen van Pienbroek. All rights reserved.
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AdvancedInputFieldPlugin
 {
@@ -21,11 +18,6 @@ namespace AdvancedInputFieldPlugin
 #if(UNITY_ANDROID || UNITY_IOS)
 			keyboardScroller = GetComponentInParent<KeyboardScroller>();
 #endif
-		}
-
-		private void Start()
-		{
-			UpdateSize();
 		}
 
 		private void OnRectTransformDimensionsChange()
