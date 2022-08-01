@@ -1,3 +1,9 @@
+# Builds
+Assets/Plugins/Android/NativeKeyboard.aar
+Assets/Plugins/Android/NativeKeyboard.aar.meta
+Assets/Plugins/iOS/NativeKeyboard.a
+Assets/Plugins/iOS/NativeKeyboard.a.meta
+
 # =============== #
 # Unity generated #
 # =============== #
